@@ -1,0 +1,143 @@
+/* ---------  Variables */
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
+/* ---------  Setup */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f9f9f9;
+}
+
+/* ---------  Fonts */
+h1, h2, h3, h4, h5 {
+  color: #6a6a6a;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 576px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 576px) {
+  h2 {
+    font-size: 1.875rem;
+  }
+}
+
+h3 {
+  font-weight: normal;
+  font-size: .9rem;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 767px) {
+  h3 {
+    font-size: 1.17rem;
+  }
+}
+
+strong {
+  color: #000;
+}
+
+p, ul, li, a {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  color: #777;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: .4s all;
+  transition: .4s all;
+}
+
+a:hover, a:active {
+  text-decoration: none;
+  color: black;
+}
+
+nav {
+  background-color: #f1f1f1;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 960px;
+  margin: auto;
+}
+
+.wrapper .card {
+  position: relative;
+  margin: 4%;
+  width: 100%;
+}
+
+@media (min-width: 500px) {
+  .wrapper .card {
+    width: 42%;
+  }
+}
+
+@media (min-width: 900px) {
+  .wrapper .card {
+    width: 25.333%;
+  }
+}
+
+.wrapper .card i {
+  position: absolute;
+  top: -32px;
+  left: 35%;
+  border-radius: 50%;
+  padding: 1.5em;
+  color: #fff;
+}
+
+.wrapper .card .title {
+  background-color: #f1f1f1;
+}
+
+.manager-icon {
+  background-color: #00b1ff;
+}
+
+.manager-title, .manager-link {
+  color: #00b1ff;
+}
+
+.engineer-icon {
+  background-color: #ff4565;
+}
+
+.engineer-title, .engineer-link {
+  color: #ff4565;
+}
+
+.intern-icon {
+  background-color: #58d458;
+}
+
+.intern-title, .intern-link {
+  color: #58d458;
+}
+/*# sourceMappingURL=style.css.map */

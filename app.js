@@ -8,7 +8,7 @@ const Intern = require("./lib/Intern");
 const writeFileAsync = util.promisify(fs.writeFile);
 const readFileAsync = util.promisify(fs.readFile);
 
-const engeneers = [];
+const engineers = [];
 const interns = [];
 
 // Prompt user's team list. They can have 1 manager and any number of engineers and interns.
@@ -115,8 +115,8 @@ function promptUserIntern() {
         const inputId = inputManagerData.id;
         const inputEmail = inputManagerData.email;
         const inputOfficeNumber = inputManagerData.officeNumber;
-        const newManager = new Manager(inputName, inputId, inputEmail, inputOfficeNumber);
-        console.log(newManager);
+        const manager = new Manager(inputName, inputId, inputEmail, inputOfficeNumber);
+        console.log(manager);
 
         // Wait on number of Engineers and Interns they want
         const inputNumbers = await promptUserNumber();
@@ -135,8 +135,11 @@ function promptUserIntern() {
             const inputEmail = inputEngeneerData.email;
             const inputGithub = inputEngeneerData.github;
             const newEngineer = new Engineer (inputName, inputId, inputEmail, inputGithub);
-            console.log(newEngineer);
+            // console.log(newEngineer);
+            engineers.push(newEngineer);
         }
+
+        console.log(engineers);
 
         // Create object for each number of Interns they provided
         for (let i = 0; i < inputInternNumber; i++) {
@@ -146,8 +149,24 @@ function promptUserIntern() {
             const inputEmail = inputInternData.email;
             const inputSchool = inputInternData.school;
             const newIntern = new Intern (inputName, inputId, inputEmail, inputSchool);
-            console.log(newIntern);
+            // console.log(newIntern);
+            interns.push(newIntern);
         }
+
+        const html = `
+            <!DOCTYPE html>
+            <html lang="en">
+
+            <head>
+            <meta charset="UTF-8">
+            <title>Team Profile</title>
+            </head>
+                <body>
+                    ${engineers.map(engineer => `<div>${engineer.name}</div>`)}
+                </body>
+            </html>`;
+
+        console.log(html);
 
     } catch (err) {
         console.log(err);

@@ -1,0 +1,133 @@
+/* ---------  Variables */
+$c-theme1: #00b1ff;
+$c-theme2: #ff4565;
+$c-theme3: #58d458;
+$c-lightgrey: #f1f1f1;
+$c-white: #fff;
+$c-black: #000;
+$c-bg: #f9f9f9;
+
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
+
+$f-headings: 'Roboto', sans-serif;
+$f-body: 'Roboto', sans-serif;
+
+
+/* ---------  Setup */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+      margin: 0;
+      background: $c-bg; 
+  }
+
+
+  /* ---------  Fonts */
+  h1, h2, h3, h4, h5 {
+    color: #6a6a6a;
+    font-family: $f-headings;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+    @media screen and (min-width: 576px) {
+        font-size: 2.5rem;
+    }
+  }
+
+  h2 {
+      font-size: 1.5rem;
+      @media screen and (min-width: 576px) {
+        font-size: 1.875rem;
+      }
+  }
+
+  h3 {
+      font-weight: normal;
+      font-size: .9rem;
+      text-transform: uppercase;
+      @media screen and (min-width: 767px) {
+        font-size: 1.17rem;
+      }
+  }
+
+  strong {
+    color: $c-black;
+  }
+
+  p, ul, li, a {
+    font-family: $f-body;
+    margin: 0;
+    color: #777;
+  }
+
+  ul {
+      list-style-type: none;
+      padding: 0;
+  }
+
+  a {
+      text-decoration: none;
+      transition: .4s all;
+      &:hover, &:active {
+        text-decoration: none;
+        color: black;
+    }
+  }
+
+
+//   ------ Layout
+nav {
+    background-color: $c-lightgrey;
+}
+.wrapper {
+    width: 90%;
+    max-width: 960px;
+    margin: auto;
+    .card {
+        position: relative;
+        margin: 4%;
+        width: 100%;
+        @media (min-width: 500px) {
+            width: 42%;
+        }
+        @media (min-width: 900px) {
+        width: 25.333%;
+        }
+        i {
+            position: absolute;
+            top: -32px;
+            left: 35%;
+            border-radius: 50%;
+            padding: 1.5em;
+            color: $c-white;
+        }
+        .title {
+            background-color: $c-lightgrey;
+        }
+    }
+}
+
+.manager-icon {
+    background-color: $c-theme1;
+}
+.manager-title, .manager-link {
+    color: $c-theme1;
+}
+
+.engineer-icon {
+    background-color: $c-theme2;
+}
+.engineer-title, .engineer-link {
+    color: $c-theme2;
+}
+
+.intern-icon {
+    background-color: $c-theme3;
+}
+.intern-title, .intern-link {
+    color: $c-theme3;
+}
