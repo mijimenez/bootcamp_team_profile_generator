@@ -89,9 +89,10 @@ nav {
     margin: auto;
     .card {
         position: relative;
-        margin: 4%;
+        margin: 8% 4%;
         width: 100%;
         @media (min-width: 500px) {
+            margin: 4%;
             width: 42%;
         }
         @media (min-width: 900px) {
@@ -100,7 +101,7 @@ nav {
         i {
             position: absolute;
             top: -32px;
-            left: 35%;
+            left: calc(50% - 32px);
             border-radius: 50%;
             padding: 1.5em;
             color: $c-white;
