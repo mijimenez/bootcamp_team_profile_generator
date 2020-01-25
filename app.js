@@ -156,15 +156,66 @@ function promptUserIntern() {
         const html = `
             <!DOCTYPE html>
             <html lang="en">
-
             <head>
             <meta charset="UTF-8">
-            <title>Team Profile</title>
+            <title p-5>Team Profile</title p-5>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <script src="https://kit.fontawesome.com/7b4d2fea99.js" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="assets/css/style.css">
             </head>
-                <body>
-                    ${engineers.map(engineer => `<div>${engineer.name}</div>`)}
-                </body>
-            </html>`;
+            <body class="text-center">
+                <nav class="p-3">
+                    <h4>My Team</h4>
+                </nav>
+                <div class="wrapper d-flex flex-wrap my-5">
+
+                    <div class="card manager-card shadow-sm">
+                        <i class="fas fa-mug-hot team-icon manager-icon shadow"></i>
+                        <div class="title py-5 px-3">
+                            <h2>${manager.name}</h2>
+                            <h3 class="manager-title">Manager</h3>
+                        </div>
+                        <ul class="p-4">
+                            <li>ID: ${manager.id}</li>
+                            <li>Email: <a href="mailto:${manager.email}" target="_top" class="manager-link">${manager.email}</a></li>
+                            <li>Office Number: ${manager.officeNumber}</li>
+                        </ul>
+                    </div>
+
+                    ${engineers.map(engineer => `
+                    <div class="card engineer-card shadow-sm">
+                        <i class="fas fa-glasses team-icon engineer-icon shadow"></i>
+                        <div class="title py-5 px-3">
+                            <h2>${engineer.name}</h2>
+                            <h3 class="engineer-title">Engineer</h3>
+                        </div>
+                        <ul class="p-4">
+                            <li>ID: ${engineer.id}</li>
+                            <li>Email: <a href="mailto:${engineer.email}" target="_top" class="engineer-link">${engineer.email}</a></li>
+                            <li>GitHub: <a href="https://github.com/${engineer.github}" class="engineer-link">${engineer.github}</a></li>
+                        </ul>
+                    </div>
+                    `)}
+
+                    ${interns.map(intern => `
+                    <div class="card intern-card shadow-sm">
+                        <i class="fas fa-graduation-cap team-icon intern-icon shadow"></i>
+                        <div class="title py-5 px-3">
+                            <h2>${intern.name}</h2>
+                            <h3 class="intern-title">Intern</h3>
+                        </div>
+                        <ul class="p-4">
+                            <li>ID: ${intern.id}</li>
+                            <li>Email: <a href="mailto:${intern.email}" target="_top" class="intern-link">${intern.email}</a></li>
+                            <li>School: ${intern.school}</li>
+                        </ul>
+                    </div>
+                    `)}
+
+                </div>
+            </body>
+            </html>
+        `;
 
         console.log(html);
 
