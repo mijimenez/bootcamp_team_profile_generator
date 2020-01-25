@@ -219,6 +219,10 @@ function promptUserIntern() {
 
         console.log(html);
 
+        // Write this html into an actual html file
+        await writeFileAsync(`team_profile.html`, html);
+        console.log(`Generated team_profile.html`);
+
     } catch (err) {
         console.log(err);
     }
