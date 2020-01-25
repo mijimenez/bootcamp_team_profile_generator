@@ -196,7 +196,7 @@ function promptUserIntern() {
                             <li>GitHub: <a href="https://github.com/${engineer.github}" class="engineer-link">${engineer.github}</a></li>
                         </ul>
                     </div>
-                    `)}
+                    `).join("")}
 
                     ${interns.map(intern => `
                     <div class="card intern-card shadow-sm">
@@ -211,7 +211,7 @@ function promptUserIntern() {
                             <li>School: ${intern.school}</li>
                         </ul>
                     </div>
-                    `)}
+                    `).join("")}
 
                 </div>
             </body>
