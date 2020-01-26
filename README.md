@@ -3,8 +3,13 @@
 This is a Node CLI command-line application that takes in information about employees and generates an HTML webpage that displays summaries for each person.
 
 ## Demo of Application
+Answering prompts in the command-line:
 
-![Demo](./assets/img/developer_profile_demo_lowres.gif)
+![Demo 1](./assets/gifs/demo-1.gif)
+
+Generating the HTML webpage:
+
+![Demo 2](./assets/gifs/demo-2.gif)
 
 ## Instructions
 Initialize with required npm packages using this command:
