@@ -6,39 +6,41 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
 const writeFileAsync = util.promisify(fs.writeFile);
-const readFileAsync = util.promisify(fs.readFile);
 
 const engineers = [];
 const interns = [];
 
 // Prompt user's team list. They can have 1 manager and any number of engineers and interns.
-function promptUserManager() {
+const promptUserManager = () => {
+    console.log("You must create 1 manger profile.")
     return inquirer
       .prompt([
         {
             type: "input",
-            message: "Enter the name of the manager:",
+            message: "Enter the name:",
             name: "name"
         }, 
         {
             type: "input",
-            message: "Enter the id of the manager:",
+            message: "Enter the id:",
             name: "id"
         },
         {
             type: "input",
-            message: "Enter the email of the manager:",
+            message: "Enter the email:",
             name: "email"
         },
         {
             type: "input",
-            message: "Enter the office number of the manager:",
+            message: "Enter the office number:",
             name: "officeNumber"
         }
       ]);
 }
 
-function promptUserNumber() {
+
+const promptUserNumber = () => {
+    console.log("--------------")
     return inquirer
       .prompt([
         {
@@ -48,59 +50,63 @@ function promptUserNumber() {
         }, 
         {
             type: "input",
-            message: "How many Interns do you want on your team?",
+            message: "How many interns do you want on your team?",
             name: "internNumber"
         }
       ]);
 }
 
-function promptUserEngineer() {
+const promptUserEngineer = () => {
+    console.log("--------------")
+    console.log("Create a new engineer profile.")
     return inquirer
       .prompt([
         {
             type: "input",
-            message: "Enter the name of this engineer:",
+            message: "Enter the name:",
             name: "name"
         }, 
         {
             type: "input",
-            message: "Enter the id of this engineer:",
+            message: "Enter the id:",
             name: "id"
         },
         {
             type: "input",
-            message: "Enter the email of this engineer:",
+            message: "Enter the email:",
             name: "email"
         },
         {
             type: "input",
-            message: "Enter the GitHub username of this engineer:",
+            message: "Enter the GitHub username:",
             name: "github"
         }
       ]);
 }
 
-function promptUserIntern() {
+const promptUserIntern = () => {
+    console.log("--------------")
+    console.log("Create a new intern profile.")
     return inquirer
       .prompt([
         {
             type: "input",
-            message: "Enter the name of this intern:",
+            message: "Enter the name:",
             name: "name"
         }, 
         {
             type: "input",
-            message: "Enter the id of this intern:",
+            message: "Enter the id:",
             name: "id"
         },
         {
             type: "input",
-            message: "Enter the email of this intern:",
+            message: "Enter the email:",
             name: "email"
         },
         {
             type: "input",
-            message: "Enter the school of this intern:",
+            message: "Enter the school:",
             name: "school"
         }
       ]);
@@ -116,7 +122,7 @@ function promptUserIntern() {
         const inputEmail = inputManagerData.email;
         const inputOfficeNumber = inputManagerData.officeNumber;
         const manager = new Manager(inputName, inputId, inputEmail, inputOfficeNumber);
-        console.log(manager);
+        // console.log(manager);
 
         // Wait on number of Engineers and Interns they want
         const inputNumbers = await promptUserNumber();
@@ -139,7 +145,7 @@ function promptUserIntern() {
             engineers.push(newEngineer);
         }
 
-        console.log(engineers);
+        // console.log(engineers);
 
         // Create object for each number of Interns they provided
         for (let i = 0; i < inputInternNumber; i++) {
@@ -162,7 +168,7 @@ function promptUserIntern() {
             <title p-5>Team Profile</title p-5>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
             <script src="https://kit.fontawesome.com/7b4d2fea99.js" crossorigin="anonymous"></script>
-            <link rel="stylesheet" href="assets/css/style.css">
+            <link rel="stylesheet" href="../assets/css/style.css">
             </head>
             <body class="text-center">
                 <nav class="p-3">
@@ -218,11 +224,12 @@ function promptUserIntern() {
             </html>
         `;
 
-        console.log(html);
+        // console.log(html);
 
         // Write this html into an actual html file
-        await writeFileAsync(`team_profile.html`, html);
-        console.log(`Generated team_profile.html`);
+        await writeFileAsync(`output/team_profile.html`, html);
+        console.log("--------------")
+        console.log(`Generated team_profile.html to the "output" folder!`);
 
     } catch (err) {
         console.log(err);
