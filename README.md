@@ -3,11 +3,11 @@
 This is a Node CLI command-line application that takes in information about employees and generates an HTML webpage that displays summaries for each person.
 
 ## Demo of Application
-Answering prompts in the command-line:
+Creating team profiles via the command-line:
 
 ![Demo 1](./assets/gifs/demo-1.gif)
 
-Generating the HTML webpage:
+Generating and locating the HTML webpage:
 
 ![Demo 2](./assets/gifs/demo-2.gif)
 
@@ -26,7 +26,7 @@ node app.js
 
 The application will prompt the user for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of engineers and interns.
 
-The HTML page will be populated with the following:
+The HTML file will be generate in the "output" directory with the following:
 
 * Summaries cards of the following team memebers:
     * 1 manager with the following:

@@ -38,7 +38,6 @@ const promptUserManager = () => {
       ]);
 }
 
-
 const promptUserNumber = () => {
     console.log("--------------")
     return inquirer
