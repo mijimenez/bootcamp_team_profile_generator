@@ -18,22 +18,38 @@ const promptUserManager = () => {
         {
             type: "input",
             message: "Enter the name:",
-            name: "name"
+            name: "name",
+            validate: function(value) {
+                var valid = isNaN(value);
+                return valid || 'Please enter a name.';
+            }
         }, 
         {
             type: "input",
             message: "Enter the id:",
-            name: "id"
+            name: "id",
+            validate: function(value) {
+                var valid = !isNaN(parseFloat(value));
+                return valid || 'Please enter a number.';
+            }
         },
         {
             type: "input",
             message: "Enter the email:",
-            name: "email"
+            name: "email",
+            validate: function(value) {
+                var valid = isNaN(value);
+                return valid || 'Please enter an email.';
+            }
         },
         {
             type: "input",
             message: "Enter the office number:",
-            name: "officeNumber"
+            name: "officeNumber",
+            validate: function(value) {
+                var valid = !isNaN(parseFloat(value));
+                return valid || 'Please enter a number.';
+            }
         }
       ]);
 }
@@ -45,12 +61,20 @@ const promptUserNumber = () => {
         {
             type: "input",
             message: "How many engineers do you want on your team?",
-            name: "engineerNumber"
+            name: "engineerNumber",
+            validate: function(value) {
+                var valid = !isNaN(parseFloat(value));
+                return valid || 'Please enter a number.';
+            }
         }, 
         {
             type: "input",
             message: "How many interns do you want on your team?",
-            name: "internNumber"
+            name: "internNumber",
+            validate: function(value) {
+                var valid = !isNaN(parseFloat(value));
+                return valid || 'Please enter a number.';
+            }
         }
       ]);
 }
@@ -63,22 +87,38 @@ const promptUserEngineer = () => {
         {
             type: "input",
             message: "Enter the name:",
-            name: "name"
+            name: "name",
+            validate: function(value) {
+                var valid = isNaN(value);
+                return valid || 'Please enter a name.';
+            }
         }, 
         {
             type: "input",
             message: "Enter the id:",
-            name: "id"
+            name: "id",
+            validate: function(value) {
+                var valid = !isNaN(parseFloat(value));
+                return valid || 'Please enter a number.';
+            }
         },
         {
             type: "input",
             message: "Enter the email:",
-            name: "email"
+            name: "email",
+            validate: function(value) {
+                var valid = isNaN(value);
+                return valid || 'Please enter an email.';
+            }
         },
         {
             type: "input",
             message: "Enter the GitHub username:",
-            name: "github"
+            name: "github",
+            validate: function(value) {
+                var valid = isNaN(value);
+                return valid || 'Please enter a username.';
+            }
         }
       ]);
 }
@@ -91,22 +131,38 @@ const promptUserIntern = () => {
         {
             type: "input",
             message: "Enter the name:",
-            name: "name"
+            name: "name",
+            validate: function(value) {
+                var valid = isNaN(value);
+                return valid || 'Please enter a name.';
+            }
         }, 
         {
             type: "input",
             message: "Enter the id:",
-            name: "id"
+            name: "id",
+            validate: function(value) {
+                var valid = !isNaN(parseFloat(value));
+                return valid || 'Please enter a number.';
+            }
         },
         {
             type: "input",
             message: "Enter the email:",
-            name: "email"
+            name: "email",
+            validate: function(value) {
+                var valid = isNaN(value);
+                return valid || 'Please enter an email.';
+            }
         },
         {
             type: "input",
             message: "Enter the school:",
-            name: "school"
+            name: "school",
+            validate: function(value) {
+                var valid = isNaN(value);
+                return valid || 'Please enter a school.';
+            }
         }
       ]);
 }
